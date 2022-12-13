@@ -508,7 +508,14 @@ class __MultiSelectChipFieldViewState<V>
                         ? widget.colorator!(item.value)!.withOpacity(1)
                         : widget.selectedTextStyle != null
                             ? widget.selectedTextStyle!.color
-                            : null)
+                            : null,
+                    fontFamily: widget.selectedTextStyle != null
+                        ? widget.selectedTextStyle!.fontFamily
+                        : null,
+                    fontWeight: widget.selectedTextStyle != null
+                        ? widget.selectedTextStyle!.fontWeight
+                        : null,
+                  )
                 : TextStyle(
                     color: widget.textStyle != null
                         ? widget.textStyle!.color ?? widget.chipColor
@@ -516,8 +523,13 @@ class __MultiSelectChipFieldViewState<V>
                     fontSize: widget.textStyle != null
                         ? widget.textStyle!.fontSize
                         : null,
+                    fontFamily: widget.textStyle != null
+                        ? widget.textStyle!.fontFamily
+                        : null,
+                    fontWeight: widget.textStyle != null
+                        ? widget.textStyle!.fontWeight
+                        : null,
                   ),
-                
           ),
         ),
         selected: _selectedValues.contains(item.value),
